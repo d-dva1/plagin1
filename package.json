@@ -1,0 +1,57 @@
+{
+  "name": "todo-highlighter-navigator",
+  "displayName": "TODO Highlighter & Navigator",
+  "description": "Подсвечивает TODO/FIXME/BUG в коде и показывает их в отдельном окне с навигацией по клику.",
+  "version": "0.0.1",
+  "publisher": "d_dva1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:todoView",
+    "onCommand:todoHighlighter.scanTodos"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "todoHighlighter.scanTodos",
+        "title": "TODO Highlighter: Просканировать текущий файл"
+      },
+      {
+        "command": "todoHighlighter.revealTodo",
+        "title": "TODO Highlighter: Перейти к TODO"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "todoView",
+          "name": "TODO Highlighter"
+        }
+      ]
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "todoHighlighter.scanTodos",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}
