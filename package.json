@@ -3,7 +3,7 @@
   "displayName": "TODO Highlighter & Navigator",
   "description": "Подсвечивает TODO/FIXME/BUG в коде и показывает их в отдельном окне с навигацией по клику.",
   "version": "0.0.1",
-  "publisher": "d_dva1",
+  "publisher": "d-dva1",
   "engines": {
     "vscode": "^1.80.0"
   },
